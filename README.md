@@ -24,10 +24,22 @@ git clone --recurse-submodules https://github.com/rmdes/cloudron-newsdiff.git
 cd cloudron-newsdiff
 ```
 
-### Build and install
+### Option A: Use pre-built image (quickest)
+
+A pre-built image is published to GHCR on every push to `main`:
 
 ```bash
-# Build the Cloudron image
+# Install on your Cloudron
+cloudron install --image ghcr.io/rmdes/cloudron-newsdiff:main
+
+# Update an existing install
+cloudron update --app <app-id> --image ghcr.io/rmdes/cloudron-newsdiff:main
+```
+
+### Option B: Build locally
+
+```bash
+# Build the Cloudron image (pushes to your configured registry)
 cloudron build
 
 # Install on your Cloudron
