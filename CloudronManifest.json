@@ -4,6 +4,7 @@
 	"author": "NewsDiff",
 	"description": "Monitor RSS feeds for article changes and display visual diffs",
 	"tagline": "News article diff tracker",
+	"icon": "file://logo.png",
 	"version": "0.1.0",
 	"httpPort": 8000,
 	"healthCheckPath": "/health",
