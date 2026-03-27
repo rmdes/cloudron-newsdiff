@@ -1,3 +1,3 @@
 [submodule "newsdiff"]
 	path = newsdiff
-	url = https://github.com/rmdes/newsdiff.git
+	url = git@github.com:rmdes/newsdiff.git
