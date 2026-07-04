@@ -10,6 +10,10 @@ RUN mkdir -p /usr/local/node-$NODE_VERSION && \
     tar zxf - --strip-components 1 -C /usr/local/node-$NODE_VERSION
 ENV PATH="/usr/local/node-$NODE_VERSION/bin:$PATH"
 
+# node 22 ships npm 10, which writes a self-inconsistent lock for the
+# dual-version @noble/hashes tree; npm 11 resolves it correctly.
+RUN npm i -g npm@11
+
 # Install dependencies from submodule
 COPY newsdiff/package.json newsdiff/package-lock.json ./
 RUN npm ci
